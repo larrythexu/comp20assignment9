@@ -1,0 +1,62 @@
+[
+  {
+    "title": "House of the Rising Sun",
+    "artist": "The Animals",
+    "genres": ["rock", "folk rock", "blues rock"],
+    "release year": "1983"
+  },
+  {
+    "title": "September",
+    "artist": "Earth, Wind & Fire",
+    "genres": ["R&B", "disco", "soul"],
+    "release year": "1978"
+  },
+  {
+    "title": "I Want You Back",
+    "artist": "The Jackson 5",
+    "genres": ["pop", "soul"],
+    "release year": "1969"
+  },
+  {
+    "title": "Come and Get Your Love",
+    "artist": "Redbone",
+    "genres": ["R&B", "pop", "funk"],
+    "release year": "1969"
+  },
+  {
+    "title": "Lean on Me",
+    "artist": "Bill Withers",
+    "genres": ["soul"],
+    "release year": "1972"
+  },
+  {
+    "title": "Mr. Blue Sky",
+    "artist": "Electric Light Orchestra",
+    "genres": ["pop"],
+    "release year": "1971"
+  },
+  {
+    "title": "Ain't No Sunshine",
+    "artist": "Bill Withers",
+    "genres": ["R&B", "blues", "soul"],
+    "release year": "1971"
+  },
+  {
+    "title": "Grandma's Hands",
+    "artist": "Bill Withers",
+    "genres": ["soul"],
+    "release year": "1971"
+  },
+  {
+    "title": "Forget You",
+    "artist": "CeeLo Green",
+    "genres": ["soul", "funk", "pop"],
+    "release year": "2010"
+  },
+  {
+    "title": "Let's Get it Started",
+    "artist": "Black Eyed Peas",
+    "genres": ["funk", "pop", "hip hop"],
+    "release year": "2003"
+  }
+]
