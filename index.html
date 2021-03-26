@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Coverbands JSON to JS</title>
+    <script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
+  </head>
+  <body>
+    <script type="text/javascript">
+    // load songs
+    document.write("<b>Raw String:</b> <br> <br>");
+
+    function displaySongs(song, displayString) {
+      displayString += song.title + "<br>";
+      displayString += "Artist: " + song.artist + "<br>";
+
+      //read through genres
+      genreLength = song.genres.length;
+      displayString += "Genre(s): ";
+      for (i = 0; i < genreLength; i++) {
+          displayString += song.genres[i];
+          if (i + 1 < genreLength)
+            displayString += ", ";
+      }
+      displayString += "<br>";
+
+      displayString += "Release Year: " + song.year + "<br>";
+      displayString += "<br>";
+
+      return displayString;
+    }
+
+    $.get("https://larrythexu.github.io/comp20assignment9/coverbands.json",
+          function(setlist) {
+            setListRaw = JSON.stringify(setlist);
+            document.write("<b>Raw String:</b> <br> <br>");
+            document.write(setListRaw);
+
+            //user friendly
+            document.write("<br> <br> <b>User-Friendly String:</b> <br> <br>");
+            setString = "";
+            setlist.forEach(function (song) {
+              setString = displaySongs(song, setString);
+            })
+
+            document.write(setString);
+
+            //form
+            formString = "<p>Select a genre:</p>";
+
+            formString += "<select name='genreSelect' id='genreSelect'>"
+                        + "<option value='rock'>Rock</option>"
+                        + "<option value='folk rock'>Folk Rock</option>"
+                        + "<option value='blues rock'>Blues Rock</option>"
+                        + "<option value='R&B'>R&B</option>"
+                        + "<option value='disco'>Disco</option>"
+                        + "<option value='soul'>Soul</option>"
+                        + "<option value='pop'>Pop</option>"
+                        + "<option value='funk'>Funk</option>"
+                        + "<option value='blues'>Blues</option>"
+                        + "<option value='hip hop'>Hip Hop</option>"
+                        + "</select>";
+
+            formString += "<button id='filter'>Filter</button> <br><br>";
+
+            document.write("<br> <br> <b>Form Select:</b> <br>");
+            document.write(formString);
+
+            document.write("<p id='results'><p>");
+
+            //form display
+            $("#filter").click(function() {
+                filterString = "";
+                
+                //get genre
+                filterGenre = $("#genreSelect").val();
+                setlist.forEach(function (song) {
+                  if (song.genres.includes(filterGenre)) {
+                    filterString = displaySongs(song, filterString);
+                  }
+                })
+
+                $("#results").html(filterString);
+            })
+        })
+    </script>
+  </body>
+</html>

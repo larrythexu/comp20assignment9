@@ -58,5 +58,11 @@
     "artist": "Black Eyed Peas",
     "genres": ["funk", "pop", "hip hop"],
     "year": "2003"
-  }
+  },
+  {
+    "title": "The Sound of Silence",
+    "artist": "Simon & Garfunkel",
+    "genres": ["folk rock"],
+    "year": "1983"
+  },
 ]
